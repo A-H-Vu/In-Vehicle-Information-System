@@ -1,18 +1,18 @@
 package Main;
 
-public class VehicleInfo {
+public class VehicleInfo{ 
 	private String brand;
 	private String model;
 	private String color;
 	private String platNum;
 	
-	public VehicleInfo(String b,String m,String c,String p) {
-	this.brand=b;
-	this.model=m;
-	this.color=c;
-	this.platNum=p;
+	public VehicleInfo(String b,String m,String co,String p) {
+		setBrand(b);
+		setModel(m);
+		setColor(co);
+		setPlatNum(p);
 	}
-	
+		
 	public void setBrand(String br) {
 		this.brand=br;
 	}
