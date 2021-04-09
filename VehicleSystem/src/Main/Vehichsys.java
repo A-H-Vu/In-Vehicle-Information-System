@@ -1,7 +1,7 @@
+
 package Main;
 
 import java.util.*;
-import java.util.Scanner;
 
 public class Vehichsys {
 		
@@ -88,5 +88,28 @@ public class Vehichsys {
 		}
 	}
 	
-
+	public void Insertion(CustomerInfo cu,Set<VehicleInfo> ve) {
+		InsertCustomer(cu);
+		for(VehicleInfo v:ve) {
+			InsertVehicle(v);
+		}
+		OwnerInfo.put(cu, ve);
+	}
+	
+	public void Deltetion(CustomerInfo cu) {
+		DeleteCustomer(cu);
+		Set<VehicleInfo> ve=OwnerInfo.get(cu);
+		for(VehicleInfo v:ve) {
+			DeleteVehicle(v);
+		}
+		OwnerInfo.remove(cu);
+	}
+	
+	public void Search(CustomerInfo cu) {
+		Set<VehicleInfo> ve=OwnerInfo.get(cu);
+		for(VehicleInfo v:ve) {
+			GetVehicle(v);
+		}
+	}
+	
 }
