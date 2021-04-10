@@ -13,18 +13,24 @@ public class MainSystem {
 	public static void main(String[] args) {
 		printWelcome();
 		sys.Entry();
+		boolean finish=false;
+		while(!finish) {
 		printOperation();
 		int n=0;
 		if(scan.hasNext()) {
 			n=Integer.parseInt(scan.nextLine());
 		}
 		Operation(n);
+		if(n==5) {
+			finish=true;
+		}
+		}
 	}
 	
 	public static void getInput() {
+		System.out.println("============Please input the customer information:============");
+		System.out.println("First Name:");
 		if(scan.hasNext()) {
-			System.out.println("============Please input the customer information:============");
-			System.out.println("First Name:");
 			firstName = scan.nextLine();
 			System.out.println("Last Name:");
 			lastName=scan.nextLine();
@@ -94,5 +100,6 @@ public class MainSystem {
 		System.out.println("2.Deltetion");
 		System.out.println("3.Search");
 		System.out.println("4.Entry");
+		System.out.println("5.Exit");
 	}
 }
