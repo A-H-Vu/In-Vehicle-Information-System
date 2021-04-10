@@ -4,8 +4,22 @@ import java.util.*;
 
 public class VehicleTreeMap {
 	
-	private List<VehicleInfo> vehicles;
-	private List<CustomerInfo> customers;
-	private Map<CustomerInfo,Set<VehicleInfo>> OwnerInfo=new HashMap<CustomerInfo,Set<VehicleInfo>>();
+	private TreeMap<CustomerInfo, VehicleInfo> VTree;
+	
+	public VehicleTreeMap() {
+		VTree  = new TreeMap<>();
+	}
+	
+	public void Insertion(CustomerInfo cu, VehicleInfo ve) {
+		VTree.put(cu, ve);
+	}
+	
+	public void Print() {
+		System.out.println(VTree);
+	}
+	
+//	public VehicleInfo Search(CustomerInfo key) {
+//		return OwnerInfoTree.get(key);
+//	}
 	
 }
