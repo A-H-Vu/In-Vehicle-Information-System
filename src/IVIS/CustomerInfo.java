@@ -1,4 +1,4 @@
-package Main;
+package IVIS;
 
 public class CustomerInfo {
 	private String firstName;

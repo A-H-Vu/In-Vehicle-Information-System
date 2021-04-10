@@ -1,4 +1,4 @@
-package Main;
+package IVIS;
 
 public class VehicleInfo{ 
 	private String brand;
