@@ -1,14 +1,24 @@
 package IVIS;
 
 public class CustomerInfo {
+	private long personalID;
 	private String firstName;
 	private String lastName;
 	private String country;
 
-	public CustomerInfo(String f, String l, String c) {
+	public CustomerInfo() {
+		RandomInformation ri = new RandomInformation();
+		setFirstName(ri.randomFirstName());
+		setLastName(ri.randomLastName());
+		setCountry(ri.randomCountryName());
+		setPersonalID(ri.randomID());
+	}
+
+	public CustomerInfo(String f,String l,String c, long p) {
 		setFirstName(f);
 		setLastName(l);
 		setCountry(c);
+		setPersonalID(p);
 	}
 
 	public void setFirstName(String f) {
@@ -35,7 +45,19 @@ public class CustomerInfo {
 		return country;
 	}
 
-	public String toString() {
-		return "Name: " + firstName + " " + lastName + "/tCountry: " + country;
+	public long getPersonalID() {
+		return personalID;
 	}
+
+	public void setPersonalID(long personalID) {
+		this.personalID = personalID;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerInfo [personalID=" + personalID + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", country=" + country + "]";
+	}
+	
+	
 }
