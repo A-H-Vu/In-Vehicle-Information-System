@@ -3,26 +3,21 @@ package IVIS;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Hello");
+		System.out.println("Program started");
 		
-//		VehicleTreeMap vh = new VehicleTreeMap();
-//		CustomerInfo cu = new CustomerInfo("Teng","Zhang","China");
-//		VehicleInfo ve = new VehicleInfo("Ford","Model-T","Red","A1231");
-//		CustomerInfo cu1 = new CustomerInfo("TTTTeng","Zhang","China");
-//		
-//		vh.Print();
-//		System.out.println("========");
-//		vh.Insertion(cu, ve);
-//		vh.Insertion(cu1, ve);
-//		System.out.println("========");
-//		vh.Print();
-//		vh.Deletion(cu);
-//		System.out.println("========");
-//		vh.Print();
-//		System.out.println("==============");
+		//Object of n numbers and time it took
+		VehicleTreeMap vh1 = new VehicleTreeMap(1000000);
 		
-		VehicleTreeMap vh1 = new VehicleTreeMap(100000);
-		vh1.Print();
+		//Create the key and value for insert and time it took
+		CustomerInfo cu = new CustomerInfo("T","Z","Canada",1323123);
+		VehicleInfo ve = new VehicleInfo("Ford","Model-T","Red","A1231");
+		vh1.Insertion(cu, ve);
+		
+		//Search tree by using key, return the value, print the result and print the time it took
+		vh1.Search(cu);
+		
+		//use key for delete and time it took
+		vh1.Deletion(cu);
 	}
 
 }

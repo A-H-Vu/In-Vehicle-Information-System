@@ -11,7 +11,25 @@ public class RandomInformation {
 		LN.add("Williams");
 		LN.add("Brown");
 		LN.add("Jones");
-		LN.add("Johnson");
+		LN.add("Johnson");	
+		LN.add("Garcia");
+		LN.add("Miller");
+		LN.add("Davis");
+		LN.add("Rodriguez");
+		LN.add("Martinez");
+		LN.add("Hernandez");	
+		LN.add("Lopez");
+		LN.add("Gonzalez");
+		LN.add("Wilson");
+		LN.add("Anderson");
+		LN.add("Thomas");
+		LN.add("Taylor");	
+		LN.add("Moore");
+		LN.add("Jackson");
+		LN.add("Martin");
+		LN.add("Lee");
+		LN.add("Perez");
+		LN.add("Thompson");
 		int LNsize = LN.size();
 		return LN.get((int)(Math.random()*LNsize));
 	}
@@ -24,6 +42,12 @@ public class RandomInformation {
 		LN.add("Patricia");
 		LN.add("Robert");
 		LN.add("Jennifer");
+		LN.add("Michael");
+		LN.add("Linda");
+		LN.add("William");
+		LN.add("Elizabeth");
+		LN.add("David");
+		LN.add("Barbara");
 		int LNsize = LN.size();
 		return LN.get((int)(Math.random()*LNsize));
 	}
@@ -36,12 +60,20 @@ public class RandomInformation {
 		LN.add("China");
 		LN.add("Brazil");
 		LN.add("Australia");
+		LN.add("India");
+		LN.add("Argentina");
+		LN.add("Kazakhstan");
+		LN.add("Algeria");
+		LN.add("Denmark");
+		LN.add("Mexico");
+		LN.add("Indonesia");
+		LN.add("Sudan");
+		LN.add("Libya");
 		int LNsize = LN.size();
 		return LN.get((int)(Math.random()*LNsize));
 	}
 	
-	public long randomID() {
-		
+	public long randomID() {		
 		return (long)(Math.random() * (long)999999999999.);
 	}
 	
@@ -53,6 +85,11 @@ public class RandomInformation {
 		LN.add("Honda");
 		LN.add("Hyundai");
 		LN.add("Tesla");
+		LN.add("Ford");
+		LN.add("Audi");
+		LN.add("Volkswagen");
+		LN.add("Porsche");
+		LN.add("Nissan");
 		int LNsize = LN.size();
 		return LN.get((int)(Math.random()*LNsize));
 	}
