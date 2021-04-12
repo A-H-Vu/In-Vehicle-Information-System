@@ -107,8 +107,10 @@ public void Search(CustomerInfo cu) {
 	System.out.println(OwnerInfo.get(cu));
 }
 
-public void Entry() {
-	System.out.println(OwnerInfo.entrySet());
+public void Entry() {	
+	for(CustomerInfo i:OwnerInfo.keySet()) {
+			System.out.println("CustomerInfo "+i+"\tVehicleInfo "+OwnerInfo.get(i));
+	}
 }
 
 }
