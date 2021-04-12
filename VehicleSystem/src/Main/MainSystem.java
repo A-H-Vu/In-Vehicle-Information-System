@@ -1,8 +1,6 @@
 package Main;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 public class MainSystem {
 	static Scanner scan = new Scanner(System.in);
@@ -49,9 +47,9 @@ public class MainSystem {
 	}
 	
 	public static void getCus() {
+		System.out.println("============Please input the customer information:============");
+		System.out.println("First Name:");
 		if(scan.hasNext()) {
-			System.out.println("============Please input the customer information:============");
-			System.out.println("First Name:");
 			firstName = scan.nextLine();
 			System.out.println("Last Name:");
 			lastName=scan.nextLine();
@@ -66,20 +64,20 @@ public class MainSystem {
 			getInput();
 			VehicleInfo vi = new VehicleInfo(brand,model,color,platNum);
 			CustomerInfo cus = new CustomerInfo(firstName,lastName,country);
-			Set<VehicleInfo> vs = new HashSet<>();
-			vs.add(vi);
-			sys.Insertion(cus, vs);
+			sys.Insertion(cus, vi);
 			sys.Entry();
 			break;
 		case 2:
 			sys.Entry();
 			System.out.println("Which customer-vehicle informations you would wan to delete?");
+			getCus();
 			CustomerInfo cu = new CustomerInfo(firstName,lastName,country);
 			sys.Deltetion(cu);
 			break;
 		case 3:
 			sys.Entry();
-			System.out.println("\"Which customer-vehicle informations you would wan to search?");
+			System.out.println("Which customer-vehicle informations you would wan to search?");
+			getCus();
 			CustomerInfo cu1 = new CustomerInfo(firstName,lastName,country);
 			sys.Search(cu1);
 			break;
