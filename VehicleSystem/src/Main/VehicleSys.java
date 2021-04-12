@@ -10,10 +10,11 @@ public class VehicleSys {
 	
 private List<VehicleInfo> vehicles;
 private List<CustomerInfo> customers;
-private Map<CustomerInfo,Set<VehicleInfo>> OwnerInfo=new HashMap<CustomerInfo,Set<VehicleInfo>>();
+private Map<CustomerInfo,VehicleInfo> OwnerInfo=new HashMap<CustomerInfo,VehicleInfo>();
 
 
 public VehicleSys() {
+	
 	vehicles=new ArrayList<VehicleInfo>();
 	customers=new ArrayList<CustomerInfo>();
 	
@@ -91,28 +92,19 @@ public void GetCustomer(CustomerInfo cu) {
 	}
 }
 
-public void Insertion(CustomerInfo cu,Set<VehicleInfo> ve) {
+public void Insertion(CustomerInfo cu,VehicleInfo ve) {
 	OwnerInfo.put(cu, ve);
 	InsertCustomer(cu);
-	for(VehicleInfo v:ve) {
-		InsertVehicle(v);
-	}
+	InsertVehicle(ve);
 }
 
 public void Deltetion(CustomerInfo cu) {
-	DeleteCustomer(cu);
-	Set<VehicleInfo> ve=OwnerInfo.get(cu);
-	for(VehicleInfo v:ve) {
-		DeleteVehicle(v);
-	}
 	OwnerInfo.remove(cu);
 }
 
 public void Search(CustomerInfo cu) {
-	Set<VehicleInfo> ve=OwnerInfo.get(cu);
-	for(VehicleInfo v:ve) {
-		GetVehicle(v);
-	}
+	GetCustomer(cu);
+	System.out.println(OwnerInfo.get(cu));
 }
 
 public void Entry() {
