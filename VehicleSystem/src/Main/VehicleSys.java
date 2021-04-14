@@ -1,101 +1,35 @@
 package Main;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class VehicleSys {
-	
-private List<VehicleInfo> vehicles;
-private List<CustomerInfo> customers;
+
+private VehicleInfo vehicles=new VehicleInfo();
+private CustomerInfo customers=new CustomerInfo();
 private Map<CustomerInfo,VehicleInfo> OwnerInfo=new HashMap<CustomerInfo,VehicleInfo>();
 
-
 public VehicleSys() {
-	
-	vehicles=new ArrayList<VehicleInfo>();
-	customers=new ArrayList<CustomerInfo>();
 	
 }
 
 public void InsertVehicle(VehicleInfo ve) {
-	if(vehicles.contains(ve)) {
-		System.out.println("Error Message:This vehicle information already be contained");
+		this.vehicles=ve;
 	}
-	if(ve==null) {
-		System.out.println("Error Message:Null vehicle information,Pleas input the information first");
-	}
-	else {
-		vehicles.add(ve);
-	}
-}
 
-public void DeleteVehicle(VehicleInfo ve) {
-	if(!vehicles.contains(ve)) {
-		System.out.println("Error Message:Not found the vehicle information,Please input the information first");
-	}
-	if(ve==null) {
-		System.out.println("Error Message:Null vehicle information,Pleas input the information first");
-	}
-	else {
-		vehicles.remove(ve);
-	}
-}
-
-public void GetVehicle(VehicleInfo ve) {
-	if(!vehicles.contains(ve)) {
-		System.out.println("Error Message:Not found the vehicle information,Please input the information first");
-	}
-	if(ve==null) {
-		System.out.println("Error Message:Null vehicle information,Pleas input the information first");
-	}
-	else {
-		System.out.println(ve.toString());
-	}
+public VehicleInfo GetVehicle() {
+  return vehicles; 	
 }
 
 public void InsertCustomer(CustomerInfo cu) {
-	if(customers.contains(cu)) {
-		System.out.println("Error Message:This customer information already be contained");
-	}
-	if(cu==null) {
-		System.out.println("Error Message:Null customer information,Pleas input the information first");
-	}
-	else {
-		customers.add(cu);
-	}
+	this.customers=cu;
 }
 
-public void DeleteCustomer(CustomerInfo cu) {
-	if(!customers.contains(cu)) {
-		System.out.println("Error Message:Not found the customer information,Please input the information first");
-	}
-	if(cu==null) {
-		System.out.println("Error Message:Null customer information,Pleas input the information first");
-	}
-	else {
-		customers.remove(cu);
-	}
+public CustomerInfo GetCustomer() {
+	return customers;
 }
-
-public void GetCustomer(CustomerInfo cu) {
-	if(!customers.contains(cu)) {
-		System.out.println("Error Message:Not found the customer information,Please input the information first");
-	}
-	if(cu==null) {
-		System.out.println("Error Message:Null customer information,Pleas input the information first");
-	}
-	else {
-		System.out.println(cu.toString());
-	}
-}
-
 public void Insertion(CustomerInfo cu,VehicleInfo ve) {
 	OwnerInfo.put(cu, ve);
-	InsertCustomer(cu);
-	InsertVehicle(ve);
 }
 
 public void Deltetion(CustomerInfo cu) {
@@ -103,14 +37,40 @@ public void Deltetion(CustomerInfo cu) {
 }
 
 public void Search(CustomerInfo cu) {
-	GetCustomer(cu);
-	System.out.println(OwnerInfo.get(cu));
+	OwnerInfo.get(cu);
 }
-
 public void Entry() {	
 	for(CustomerInfo i:OwnerInfo.keySet()) {
 			System.out.println("CustomerInfo "+i+"\tVehicleInfo "+OwnerInfo.get(i));
 	}
 }
 
+@Override
+public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result
+            + ((vehicles == null) ? 0 : vehicles.hashCode());
+    result= prime * result
+            + ((customers== null) ? 0 : customers.hashCode());
+    return result;
+}
+
+@Override
+public boolean equals(Object obj) {
+	if(this==obj) {
+		return true;
+	}
+	if(obj==null) {
+		return false;
+	}
+	if(getClass()!=obj.getClass()) {
+		return false;
+	}
+	VehicleSys other=(VehicleSys)obj;
+	if(vehicles!=other.vehicles) {
+		return false;
+	}
+	return true;
+}
 }

@@ -12,6 +12,10 @@ public class VehicleInfo{
 		setColor(co);
 		setPlatNum(p);
 	}
+	
+	public VehicleInfo() {
+		
+	}
 		
 	public void setBrand(String br) {
 		this.brand=br;

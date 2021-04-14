@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class MainSystem {
 	static Scanner scan = new Scanner(System.in);
-	public static VehicleSys sys = new VehicleSys();	
+	public static VehicleSys sys = new VehicleSys();
 	public static  String firstName,lastName,country;
 	public static  String brand,model,color,platNum;
 	
 	public static void main(String[] args) {
 		printWelcome();
+		VehicleInfo vi = new VehicleInfo("Toyota","2","Red","D1234");
+		CustomerInfo cus = new CustomerInfo("N","Q","Canada");
+		sys.InsertCustomer(cus);
+		sys.InsertVehicle(vi);
+		sys.Insertion(sys.GetCustomer(), sys.GetVehicle());
 		sys.Entry();
 		boolean finish=false;
 		while(!finish) {
@@ -64,7 +69,9 @@ public class MainSystem {
 			getInput();
 			VehicleInfo vi = new VehicleInfo(brand,model,color,platNum);
 			CustomerInfo cus = new CustomerInfo(firstName,lastName,country);
-			sys.Insertion(cus, vi);
+			sys.InsertCustomer(cus);
+			sys.InsertVehicle(vi);
+			sys.Insertion(sys.GetCustomer(), sys.GetVehicle());
 			sys.Entry();
 			break;
 		case 2:
@@ -72,14 +79,16 @@ public class MainSystem {
 			System.out.println("Which customer-vehicle informations you would wan to delete?");
 			getCus();
 			CustomerInfo cu = new CustomerInfo(firstName,lastName,country);
-			sys.Deltetion(cu);
+			sys.InsertCustomer(cu);
+			sys.Deltetion(sys.GetCustomer());
 			break;
 		case 3:
 			sys.Entry();
 			System.out.println("Which customer-vehicle informations you would wan to search?");
 			getCus();
 			CustomerInfo cu1 = new CustomerInfo(firstName,lastName,country);
-			sys.Search(cu1);
+			sys.InsertCustomer(cu1);
+			sys.Search(sys.GetCustomer());
 			break;
 		case 4:
 			sys.Entry();
