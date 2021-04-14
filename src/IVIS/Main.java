@@ -6,7 +6,7 @@ public class Main {
 		System.out.println("Program started");
 
 		// Object of n numbers and time it took
-		VehicleTreeMap vh1 = new VehicleTreeMap(500000);
+		VehicleTreeMap vh1 = new VehicleTreeMap(20000000);
 
 		// Create the key and value for insert and time it took
 		CustomerInfo cu = new CustomerInfo("T", "Z", "Canada", 1323123);
