@@ -45,6 +45,18 @@ public void Entry() {
 	}
 }
 
+@Override
+public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result
+            + ((vehicles == null) ? 0 : vehicles.hashCode());
+    result= prime * result
+            + ((customers== null) ? 0 : customers.hashCode());
+    return result;
+}
+
+@Override
 public boolean equals(Object obj) {
 	if(this==obj) {
 		return true;
@@ -61,5 +73,4 @@ public boolean equals(Object obj) {
 	}
 	return true;
 }
-
 }
