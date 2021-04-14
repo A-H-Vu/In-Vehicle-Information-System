@@ -14,7 +14,7 @@ public class CustomerInfo {
 		setPersonalID(ri.randomID());
 	}
 
-	public CustomerInfo(String f,String l,String c, long p) {
+	public CustomerInfo(String f, String l, String c, long p) {
 		setFirstName(f);
 		setLastName(l);
 		setCountry(c);
@@ -58,6 +58,5 @@ public class CustomerInfo {
 		return "CustomerInfo [personalID=" + personalID + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", country=" + country + "]";
 	}
-	
-	
+
 }
