@@ -11,6 +11,10 @@ public class CustomerInfo {
 		setCountry(c);
 	}
 	
+	public CustomerInfo() {
+		
+	}
+	
 	public void setFirstName(String f) {
 		this.firstName=f;
 	}
